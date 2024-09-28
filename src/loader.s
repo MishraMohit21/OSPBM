@@ -9,11 +9,15 @@
 
 .section .text
 .extern kernalMain
+.extern callConstructors
 .global loader
 
 
 loader:
     mov $kernal_stack, %esp
+    
+    call callConstructors
+    
     push %eax
     push %ebx
     call kernalMain

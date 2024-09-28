@@ -35,9 +35,10 @@ mykernel.iso: mykernel.bin
 	echo '    boot' >> $(ISO_DIR)/boot/grub/grub.cfg
 	echo '}' >> $(ISO_DIR)/boot/grub/grub.cfg
 	grub-mkrescue -o mykernel.iso $(ISO_DIR)
+	rm -rf iso
 
-install: mykernel.iso
-	sudo cp mykernel.iso /boot/mykernel.iso
+# run:? mykernel.iso
+
 
 # Clean target
 clean:
