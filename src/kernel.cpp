@@ -1,4 +1,5 @@
 #include "types.h"
+#include "gdt.h"
 
 void printf(char* str)
 {
@@ -24,7 +25,9 @@ extern "C" void callConstructors()
 
 extern "C" void kernalMain(const void* multiboot_structure, uint32_t)
 {
-    printf("Made By Mohit Mishra Yahhh!!");
+    printf("Made By Mohit Mishra, GLobalDiscriptorTable, Port Done");
+
+    GlobalDiscriptorTable gdt;
 
     while(1);
 }
